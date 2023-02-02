@@ -1,0 +1,41 @@
+{
+    "students" : [
+        {
+            "firstname" : "Tom",
+            "lastname" : "Sawer",
+            "id" : 1
+        },
+
+
+    ]
+}
+
+
+
+
+
+{
+    "name": "Jane Doe",
+    "age": 25,
+    "city": "New York"
+}
+
+
+{
+    "employee": {
+        "name": "John Doe",
+        "age": 35,
+        "position": "Manager",
+        "skills": [
+            "Leadership",
+            "Communication",
+            "Team Management"
+        ],
+        "address": {
+            "street": "123 Main St.",
+            "city": "Anytown",
+            "state": "CA",
+            "zip": "12345"
+        }
+    }
+}
