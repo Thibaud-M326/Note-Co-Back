@@ -5,7 +5,8 @@
             "lastname": "Cury",
             "username" : "Pcury",
             "password" : "Mcury",
-            "id" : 10000
+            "subject": "science",
+            "id" : "10000"
         }
     ]
 }

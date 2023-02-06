@@ -34,6 +34,7 @@ class User {
         return null;
     }
 
+    
     public static function isUserIfTrueSoConnected($username, $password) {
         $type = substr($username, 0, 1);
         $json = User::getJson($type);
