@@ -7,14 +7,17 @@ use App\Model\User as ModelUser;
 class User {
 
 
-    protected $user;
+    protected $username;
     protected static $paths = array();
     protected static $userPaths = array();
     protected $rank;
 
-    public function __construct($username)
+    protected $id;
+
+    public function __construct($username, $id)
     {
-        $this->user = $username;
+        $this->username = $username;
+        $this->id = $id;
     }
 
 
@@ -53,7 +56,7 @@ class User {
                 echo json_encode([
                     "status" => "connected"
                 ]);
-                $user = new User($user);
+                $user = new User($user->username, $user->id);
                 $user->saveAuth();
                 return $user;
             }
@@ -68,8 +71,28 @@ class User {
     public function saveAuth() {
         session_start();
         $_SESSION["auth"]["connected"] = true;
-        $_SESSION["auth"]["type"] = substr($this->user->username, 0, 1);
-        $_SESSION["auth"]["id"] = $this->user->id;
+        $_SESSION["auth"]["type"] = substr($this->username, 0, 1);
+        $_SESSION["auth"]["id"] = $this->id;
+        $_SESSION["auth"]["username"] = $this->username;
+    }
+
+    public static function getUserBySession() {
+        if (isset($_SESSION["auth"])) {
+            return new User($_SESSION["auth"]["username"], $_SESSION["auth"]["id"]);
+        }
+        return null;
+    }
+
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 }
 
