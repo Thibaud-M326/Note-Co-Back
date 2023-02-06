@@ -1,0 +1,12 @@
+{
+    "teachers" : [
+        {
+            "firstname": "Marie",
+            "lastname": "Cury",
+            "username" : "Pcury",
+            "password" : "Mcury",
+            "subject": "science",
+            "id" : "10000"
+        }
+    ]
+}

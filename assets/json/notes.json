@@ -1,0 +1,17 @@
+{
+    "notes-list" : [
+        {
+            "id": 1,
+            "type" : "ecrit",
+            "date" : "2020-02-28",
+            "course" : "Anglais",
+            "coef" : 1,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 10
+                }
+            ]
+        }
+    ]
+}
