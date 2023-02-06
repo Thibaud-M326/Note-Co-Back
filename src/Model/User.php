@@ -50,12 +50,17 @@ class User {
         }
         foreach ($users as $user) {
             if ($user->username === $username && $user->password === $password) {
-                print_r("conected");
-                (new User($user))->saveAuth();
-                return true;
+                echo json_encode([
+                    "status" => "connected"
+                ]);
+                $user = new User($user);
+                $user->saveAuth();
+                return $user;
             }
         }
-        print_r("hello");
+        echo json_encode([
+            "status" => "unknown"
+        ]);
         return false;
         
     }
